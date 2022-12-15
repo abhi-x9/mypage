@@ -7,9 +7,10 @@ export default function Feed(){
     return (
         
     <Box  flex={2} p={2}>
-    <Card>
+    
       {feedData.map((item) => (
-        <>
+
+        <Card key={item.id.toString()}>
           <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: "red" }} aria-label={item.label}>
@@ -43,9 +44,9 @@ export default function Feed(){
           <Share />
         </IconButton>
       </CardActions>
-      </>
-      ))}
-        </Card>
+      </Card>
+
+      ))} 
     </Box>
     )
 };

@@ -39,7 +39,7 @@ export default function NavBar(){
                 <Menu
                 id="basic-menu"
                 open={open}
-                onClose={(e) => setOpen(false)}
+                onClose={() => setOpen(false)}
                 sx={{ top: "50px"}}
                 anchorOrigin={{
                     vertical: "top",
@@ -50,9 +50,9 @@ export default function NavBar(){
                     horizontal: "right",
                 }}
                 >
-                <MenuItem >Profile</MenuItem>
-                <MenuItem >My account</MenuItem>
-                <MenuItem >Logout</MenuItem>
+                <MenuItem onClick={() => setOpen(false)}>Profile</MenuItem>
+                <MenuItem onClick={() => setOpen(false)}>My account</MenuItem>
+                <MenuItem onClick={() => setOpen(false)}>Logout</MenuItem>
             </Menu>
             </StyledToolBar>
         </AppBar>

@@ -1,7 +1,7 @@
-import {  AutoStories,  Group, Home, ModeNight, Person,  Settings, Shop } from "@mui/icons-material";
+import {  AutoStories,  Group, Home, LightMode, ModeNight, Person,  Settings, Shop } from "@mui/icons-material";
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from "@mui/material";
 
-export default function SideBar(){
+export default function SideBar({ mode, setMode}){
     return (
         <Box 
         flex={1} 
@@ -60,9 +60,10 @@ export default function SideBar(){
           <ListItem disablePadding>
             <ListItemButton component="a" href="#home">
               <ListItemIcon>
-                <ModeNight />
+                {mode === "light" ? <LightMode color="error"/> : <ModeNight color="primary"/> }
               </ListItemIcon>
-              <Switch />
+              <Switch
+              onClick={() => setMode(mode === "light" ? "dark" : "light")}/>
             </ListItemButton>
           </ListItem>
           </List>

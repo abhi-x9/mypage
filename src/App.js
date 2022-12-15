@@ -1,20 +1,31 @@
-import { Box, Stack } from "@mui/material";
+import React from "react";
+import { Box, createTheme, Stack, ThemeProvider } from "@mui/material";
+import AddFab from "./components/Add";
 import Feed from "./components/Feed";
 import NavBar from "./components/NavBar";
 import RightBar from "./components/RightBar";
 import SideBar from "./components/SideBar";
 
 function App() {
+  const [ mode, setMode ] = React.useState("light");
 
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode,
+    }
+  })
   return (
-    <Box>
+    <ThemeProvider theme={darkTheme}>
+    <Box bgcolor={"background.default"} color={"text.primary"}>
       <NavBar />
     <Stack direction="row" spacing={2} justifyContent="space-between" >
-    <SideBar />
+    <SideBar mode={mode} setMode={setMode} />
     <Feed />
     <RightBar />
     </Stack>
+      <AddFab />
     </Box>
+    </ThemeProvider>
   );
 }
 

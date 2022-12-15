@@ -1,6 +1,7 @@
 
 export const feedData = [
     {
+        id: 1,
       label: "Recipe",
       avatar: "J",
       title: 'Jhon doe',
@@ -11,6 +12,7 @@ export const feedData = [
     
     },
     {
+        id: 2,
       label: "Traveling",
       title: 'Abhi',
       avatar: "A",
@@ -20,6 +22,7 @@ export const feedData = [
       typography: "This document describes requirements for general Japanese layout realized with technologies like CSS, SVG and XSL-FO."
     },
     {
+        id: 3,
         label: "Gaming",
         title: 'Monkey',
         avatar: "M",
